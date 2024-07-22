@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.outer-container{
+    height: 100vh;
+   }
+Header {
+  display: flex;
+  justify-content: center; /* Yatay merkezleme */
+  align-items: center;  
+  background-color: coral;
+  height: 15%;
+}
+Main{
+    background-color: pink;
+    height: auto;
+    width: 85%;
+    height: 100%;
+}
+.sidebar{
+    display: flex;
+    justify-content: center; /* Yatay merkezleme */
+    align-items: center;  
+    background-color: rgb(19, 20, 117);
+    height: auto;
+    width: 15%;
+}
+.outer-body{
+    display: flex;
+    /* flex-wrap:nowrap; */
+     height: 70%;
+     
+}
+footer{
+    display: flex;
+    justify-content: center; /* Yatay merkezleme */
+    align-items: center;  
+    background-color: rgb(94, 184, 15);
+    height: 15%;
+   
+}
+main{
+    display: flex;
+    justify-content: center; /* Yatay merkezleme */
+    align-items: center; 
+    overflow-y: auto;
+}
+.content-container{
+ width: 70%;
+ margin: auto;
+}
+
+@media (max-width: 600px) {
+    .outer-body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        display: none;
+    }
+    Main{
+        width: 100%;
+    }
+    .content-container{
+       
+        width:100%;
+    }
+}

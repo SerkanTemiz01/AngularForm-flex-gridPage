@@ -1,0 +1,85 @@
+.flex-page{
+    display: flex;
+    padding: 10px;
+}
+.menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 35px;
+    height: auto;
+}
+.menu-button{
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.form-outer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 75%;
+    margin: auto;
+}
+.title{
+    background-color: rgb(0, 17, 255);
+    color:aliceblue;
+    margin-bottom: 10px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    gap: 15px;
+}
+input{
+  width: 100%;
+    height: 35px;
+    text-align: center;
+}
+.form-buttons{
+    display: flex;
+    justify-content: space-around;
+}
+.button{
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button:hover {
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Gölgelendirme efekti */
+  }
+  .menu-button:hover {
+    background-color: #e9ecef; /* Hover durumunda daha açık arka plan rengi */
+    color: #495057; /* Hover durumunda daha koyu metin rengi */
+    transform: scale(1.05); /* Hover durumunda öğeyi biraz büyüt */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Gölgelendirme efekti */
+  }
+  *{
+    display: flex;
+    justify-content: center;
+  }
+  @media (max-width: 600px) {
+    .form{
+        height: auto;
+        width: auto;
+    }
+    input{
+        width: 400px;
+        height: 25px;
+       text-align: center;
+    }
+    .title{
+        width: auto;
+    }
+    .menu{
+        display: none;
+    }
+    .flex-page{
+        padding: 5px;
+    }
+}
