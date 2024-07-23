@@ -8,20 +8,20 @@
     <h1 class="title">Page One</h1>
     <form #addForm="ngForm" class="form">
         <div>
-            <input type="text"  ngModel name="field1" required placeholder="Field 1" />
+            <input type="text"  ngModel name="field1" required placeholder="TEXT FORM FILED" />
         </div>
       <div>
-        <input type="text" ngModel name="field2" required placeholder="Field 2" />
+        <input type="text" ngModel name="field2" required placeholder="TEXT FORM FILED" />
       </div>
       <div>
-        <input type="text" ngModel name="field3" required placeholder="Field 2" />
+        <input type="text" ngModel name="field3" required placeholder="TEXT FORM FILED" />
       </div>
       <div>
-        <input type="text" ngModel name="field4" required placeholder="Field 2" />
+        <input type="text" ngModel name="field4" required placeholder="TEXT FORM FILED" />
       </div>
       <div class="form-buttons">
-        <button class="button" type="button"  [disabled]="!addForm.valid">Reset</button>
-        <button class="button" type="submit" [disabled]="!addForm.valid" >Submit</button>
+        <button class="button" (click)="onReset(addForm)" type="button" [disabled]="!addForm.valid">Reset</button>
+        <button class="button" type="submit" routerLink="/grid-page" routerLinkActive="active" [disabled]="!addForm.valid" >Submit</button>
       </div>
     </form>
        </div>
