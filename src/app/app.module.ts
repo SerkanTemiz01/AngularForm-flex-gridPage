@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { LayoutsComponent } from './components/layouts/layouts.component';
 import { FlexPageComponent } from './components/layouts/flex-page/flex-page.component';
 import { GridPageComponent } from './components/layouts/grid-page/grid-page.component';
+import { colorReducer } from './store/color/color.reducer';
 
 
 
@@ -23,7 +24,7 @@ import { GridPageComponent } from './components/layouts/grid-page/grid-page.comp
     AppRoutingModule,
 
     FormsModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({color:colorReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,21 +3,25 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .outer-container{
     height: 100vh;
+    border: 3px solid;
    }
-Header {
+header {
   display: flex;
   justify-content: center; /* Yatay merkezleme */
   align-items: center;  
-  background-color: coral;
+  background-color:var(--selected-color,coral);
   height: 15%;
+  border-bottom: 3px solid;
 }
 Main{
     background-color: pink;
     height: auto;
-    width: 85%;
+    width: 90%;
     height: 100%;
+    border-right:3px solid;
 }
 .sidebar{
     display: flex;
@@ -25,7 +29,7 @@ Main{
     align-items: center;  
     background-color: rgb(19, 20, 117);
     height: auto;
-    width: 15%;
+    width: 200px;
 }
 .outer-body{
     display: flex;
@@ -37,15 +41,16 @@ footer{
     display: flex;
     justify-content: center; /* Yatay merkezleme */
     align-items: center;  
-    background-color: rgb(94, 184, 15);
+    background-color:var(--selected-color, rgb(94, 184, 15));
     height: 15%;
-   
+    border-top:3px solid;
 }
 main{
     display: flex;
     justify-content: center; /* Yatay merkezleme */
     align-items: center; 
     overflow-y: auto;
+    overflow-x: hidden;
 }
 .content-container{
  width: 70%;
@@ -68,3 +73,7 @@ main{
         width:100%;
     }
 }
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { }

@@ -1,0 +1,93 @@
+.grid-page{
+    display: grid;
+    padding: 15px 0 15px 0;
+    grid-template-columns:auto auto auto auto auto auto;
+}
+.menu{
+    display: flex;   
+    grid-column: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 15px;
+    height: auto;
+}
+.menu-button{
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    max-width: 75px;
+}
+div{
+    width: 100%;
+}
+.form-outer{
+    grid-column:2/9 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+.title{
+    background-color: rgb(0, 17, 255);
+    color:aliceblue;
+    margin-bottom: 10px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    gap: 15px;
+}
+input{
+  width: 99.5%;
+    height: 35px;
+    text-align: center;
+    padding: 0;
+}
+.form-buttons{
+    display: grid;
+    grid-template-columns:(11);
+}
+.button{
+    font-weight: 900;
+    font-size: large;
+    height: 40px; 
+    background-color: var(--selected-color,rgb(87, 100, 144));
+}
+.button1{
+    grid-column: 1/5;
+}
+.button2{
+    grid-column: 6/10;
+}
+.button:hover {
+    transform: scale(1.05); /* Slightly enlarge button on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Gölgelendirme efekti */
+  }
+  .menu-button:hover {
+    background-color: #e9ecef; /* Hover durumunda daha açık arka plan rengi */
+    color: #495057; /* Hover durumunda daha koyu metin rengi */
+    transform: scale(1.05); /* Hover durumunda öğeyi biraz büyüt */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Gölgelendirme efekti */
+  }
+ 
+  @media (max-width: 600px) {
+    .form{
+        height: auto;
+        width: auto;
+    }
+    input{
+       text-align: center;
+    }
+    .title{
+        width: auto;
+    }
+    .menu{
+        display: none;
+    }
+    .form-outer{
+        width: 95%;
+    }
+}

@@ -1,1 +1,30 @@
-<p>grid-page works!</p>
+<div class="grid-page">
+    <div class="menu">
+        <button class="menu-button" *ngFor="let item of menuItems" (click)="onMenuItemClick(item.color)">
+          {{ item.label }}
+        </button>
+      </div>
+      <div class="form-outer">
+    <h1 class="title">Page Two</h1>
+    <form #addForm="ngForm" class="form">
+        <div>
+        <input type="text"  ngModel name="field1" required placeholder="TEXT FORM FILED" />
+        </div>
+      <div>
+        <input type="text" ngModel name="field2" required placeholder="TEXT FORM FILED" />
+      </div>
+      <div>
+        <input type="text" ngModel name="field3" required placeholder="TEXT FORM FILED" />
+      </div>
+      <div>
+        <input type="text" ngModel name="field4" required placeholder="TEXT FORM FILED" />
+ 
+      </div>
+      <div class="form-buttons">
+        <button class="button button1" type="button" (click)="onReset(addForm)" [disabled]="!addForm.valid">Reset</button>
+        <button class="button button2" type="submit" routerLink="" routerLinkActive="active" [disabled]="!addForm.valid" >Submit</button>
+      </div>
+    </form>
+       </div>
+  </div>
+  

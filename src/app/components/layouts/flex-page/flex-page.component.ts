@@ -1,8 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { AppState } from 'src/app/store/Navigate/Navigate.reducer';
-import * as NavigationActions from '../../../store/Navigate/Navigate.action';
+import { ColorState, initialState } from '../../../store/color/color.reducer';
+import { changeColor } from 'src/app/store/color/color.action';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-flex-page',
@@ -22,26 +23,22 @@ export class FlexPageComponent {
     { label: 'Item 9', color: '#FF3333' },
     { label: 'Item 10', color: '#3333FF' }
   ];
-  // Seçili rengin saklanması
-  selectedColor: string = '';
 
+
+  constructor(private store:Store<{color:ColorState}>){}
   // Menü öğesi tıklandığında rengi değiştir
   onMenuItemClick(color: string) {
-    this.selectedColor = color;
+   
     // Arka plan rengini güncelle
-    document.documentElement.style.setProperty('--selected-color', color);
+    this.store.dispatch(changeColor({color}));
 }
 
-constructor(private store: Store<AppState>, private router: Router) {
-  this.store.select('navigation').subscribe((state) => {
-    if (state === 'grid') {
-      this.router.navigate(['/grid-page']);
-    }
-  });
-}
+onReset(form: NgForm) {
+  // Reset the form fields
+  form.resetForm();
 
-navigateToGrid() {
-  this.store.dispatch(NavigationActions.navigateToGrid());
+  // Reset the color in the NgRx store
+  this.store.dispatch(changeColor({ color: '' }));
 }
 
 }
